@@ -5,7 +5,7 @@ const express =  require('express');
 const basicAuth = require('./middleware/basic-auth-middleware.js');
 const oauth = require('./middleware/oauth-middleware.js');
 const auth = require('./middleware/token-auth-middleware.js');
-//const permissions =  require('./acl-middleware.js');
+const permissions =  require('./middleware/acl-middleware.js');
 const Users = require('./users.js');
 
 const app = express();
@@ -49,10 +49,26 @@ app.get('/oauth',oauth,(req,res)=>{
     res.status(200).send(req.token);
 });
 
-// app.get('/secretStuff', auth,(req,res)
-//  => {
-//     res.send('you got mail');
-// })
+app.get('/secretStuff', auth,(req,res)
+ => {
+    res.send(`Welcome back, ${req.user.username}`);
+})
+
+app.get('/create',auth, permissions('create'), (req, res) =>{
+  res.send(`Created`);
+})
+
+app.get('/update',auth, permissions('update'), (req, res) =>{
+  res.send(`Updated`);
+})
+
+app.get('/read',auth, permissions('read'), (req, res) =>{
+  res.send(`You can read`);
+})
+
+app.get('/delete',auth, permissions('delete'), (req, res) =>{
+  res.send(`Deleted`);
+})
 
 // app.get('/secretStuff', auth, permission('delete'),(req,res)
 //  => {
