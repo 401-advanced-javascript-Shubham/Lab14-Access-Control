@@ -1,7 +1,7 @@
 {
-  "name": "lab-12b",
+  "name": "lab-14",
   "version": "1.0.0",
-  "description": "## OAuth",
+  "description": "## ACL",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/401-advanced-javascript-Shubham/lab-12b.git"
+    "url": "git+https://github.com/401-advanced-javascript-Shubham/Lab14-Access-Control.git"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/401-advanced-javascript-Shubham/lab-12b/issues"
+    "url": "https://github.com/401-advanced-javascript-Shubham/Lab14-Access-Control/issues"
   },
-  "homepage": "https://github.com/401-advanced-javascript-Shubham/lab-12b#readme",
+  "homepage": "https://github.com/401-advanced-javascript-Shubham/Lab14-Access-Control#readme",
   "dependencies": {
     "base-64": "^0.1.0",
     "bcrypt": "^3.0.8",
